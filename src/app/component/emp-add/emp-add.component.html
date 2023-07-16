@@ -1,0 +1,37 @@
+<div mat-dialog-title>
+  <h1>Raised</h1>
+</div>
+<div mat-dialog-content>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>first name</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>last name</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>email</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn">cancel</button>
+  <button mat-raised-button color="success">save</button>
+</div>

@@ -1,0 +1,16 @@
+.mat-success {
+  color: #fff !important;
+  background-color: #28a745 !important;
+}
+mat-dialog-content {
+  border: 10px solid red;
+}
+.row {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  mat-form-field {
+    width: 100%;
+  }
+}
