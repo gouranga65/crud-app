@@ -19,9 +19,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table' 
 @NgModule({
   declarations: [AppComponent, EmpAddComponent],
   imports: [
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
