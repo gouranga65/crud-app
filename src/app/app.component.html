@@ -17,7 +17,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
-  <table mat-table  [dataSource]="dataSource" matSort>
+  <table mat-table [dataSource]="dataSource" matSort>
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
@@ -39,7 +39,7 @@
     </ng-container>
     <ng-container matColumnDef="DOB">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>DOB</th>
-      <td mat-cell *matCellDef="let row">{{ row.DOB |date}}</td>
+      <td mat-cell *matCellDef="let row">{{ row.DOB | date }}</td>
     </ng-container>
     <ng-container matColumnDef="gender">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>gender</th>
@@ -59,7 +59,17 @@
     </ng-container>
     <ng-container matColumnDef="pacakge">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>pacakge</th>
-      <td mat-cell *matCellDef="let row">{{ row.pacakge |currency:"INR" }}L</td>
+      <td mat-cell *matCellDef="let row">
+        {{ row.pacakge | currency : "INR" }}L
+      </td>
+    </ng-container>
+    <!-- action button -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>action</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-raised-button color="success" (click)="openEditForm(row)">edit</button>
+        <button mat-raised-button color="warn" (click)="deleteEmployee(row.id)">delete</button>
+      </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

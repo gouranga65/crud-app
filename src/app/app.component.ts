@@ -24,6 +24,7 @@ export class AppComponent {
     'company',
     'experience',
     'pacakge',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -37,7 +38,26 @@ export class AppComponent {
     this.getEmployeeList();
   }
   openAddEditEmpForm() {
-    this._dialog.open(EmpAddComponent);
+    const dialogRef = this._dialog.open(EmpAddComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList();
+        }
+      },
+    });
+  }
+  openEditForm(data: any) {
+    const dialogRef = this._dialog.open(EmpAddComponent, {
+      data: data,
+    });
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getEmployeeList();
+        }
+      },
+    });
   }
   getEmployeeList() {
     this._empService.getEmpList().subscribe({
@@ -59,5 +79,17 @@ export class AppComponent {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  deleteEmployee(id: number) {
+    this._empService.deleteEmp(id).subscribe({
+      next: (res) => {
+        // console.log('emp deleted');
+        this._empService.openSnackBar('emp deleted', 'done');
+        this.getEmployeeList();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

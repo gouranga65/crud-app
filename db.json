@@ -13,16 +13,28 @@
       "id": 1
     },
     {
-      "firstName": "meao",
-      "lastName": "meao",
-      "email": "meao@",
-      "DOB": "2023-07-17T18:30:00.000Z",
+      "firstName": "gouranga",
+      "lastName": "mahato",
+      "email": "gm49302@",
+      "DOB": "2023-07-16T18:30:00.000Z",
       "gender": "male",
-      "education": "post graduate ",
-      "company": "tcs",
-      "experience": 1,
-      "pacakge": 12,
-      "id": 2
+      "education": "intermediate",
+      "company": "ltim",
+      "experience": 2,
+      "pacakge": 22,
+      "id": 3
+    },
+    {
+      "firstName": "sandeepan",
+      "lastName": "mahato",
+      "email": "sandy@",
+      "DOB": "2023-06-05T18:30:00.000Z",
+      "gender": "male",
+      "education": "matric",
+      "company": "wipro",
+      "experience": 0,
+      "pacakge": 11,
+      "id": 4
     }
   ]
 }
